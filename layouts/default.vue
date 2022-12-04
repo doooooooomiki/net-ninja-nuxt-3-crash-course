@@ -1,6 +1,8 @@
 <template>
   <div>
-    <DojoNavigation></DojoNavigation>
+    <header>
+      <DojoNavigation></DojoNavigation>
+    </header>
     <div>
       <slot></slot>
     </div>
