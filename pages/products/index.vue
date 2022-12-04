@@ -1,20 +1,17 @@
 <template>
   <div>
     <h2>Products</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-      voluptates voluptatem voluptatibus. Veniam excepturi ea quam tempore vero
-      doloribus quibusdam!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-      voluptates voluptatem voluptatibus. Veniam excepturi ea quam tempore vero
-      doloribus quibusdam!
-    </p>
+    <div class="grid grid-cols-4 gap-5">
+      <div v-for="p in products">
+        <NuxtLink :to="`/products/${p.id}`">{{ p.title }}</NuxtLink>
+      </div>
+    </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { data: products } = await useFetch("https://fakestoreapi.com/products");
+</script>
 
 <style scoped>
 h2 {
